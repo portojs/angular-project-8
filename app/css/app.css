@@ -93,10 +93,13 @@ nav a {
   display: block;
   padding: 10px;
   text-shadow: 0 1px 2px rgba(0,0,0,1);
-}
-
-.nav-menu a {
-  display: block;
+  position: relative;
+  left: 0;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .nav-col {
@@ -112,15 +115,18 @@ nav a {
   width: 70%;
 }
 
+.nav-first-col a {
+  border-left: 2px solid #fff;
+}
+
+.nav-last-col a {
+  border-right: 2px solid #fff;
+}
+
 .nav-first-col a,
 .nav-last-col a {
-  position: relative;
-  left: 0;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -ms-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
+  color: rgba(255,255,255,0.0);
+  text-shadow: 0 0 0 rgba(0,0,0,0.0);
 }
 
 .nav-first-col a.selected {

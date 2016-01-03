@@ -18,6 +18,7 @@ angular.module('aleApp.directives', [])
       templateUrl: 'partials/directives/main-header.html',
       link: function(scope, element, attrs) {
         scope.selectedClass = 0;
+        scope.selectedClassTrue = 0;
         scope.addClass = function(newClass) {
           scope.selectedClass = newClass;
         };
@@ -25,7 +26,15 @@ angular.module('aleApp.directives', [])
           scope.selectedClass = 0;
         };
         scope.checkClass = function(newClass) {
-          return newClass === scope.selectedClass;
+          if (newClass === scope.selectedClassTrue) {
+            return true;
+          } else if (newClass === scope.selectedClass) {
+            return true;
+          }
+          return false;
+        };
+        scope.selectLink = function(newClass) {
+          scope.selectedClassTrue = newClass;
         };
       }
     }
