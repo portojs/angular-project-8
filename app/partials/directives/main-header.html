@@ -1,17 +1,41 @@
-<div id="main-header">
+<header class="header">
 
-  <h3>MAIN HEADER</h3>
+  <div>
+    <span class="title">Discover The Best Ale in The World</span>
+    <h1>Magical Ale</h1>
+    <img class="arrow" src="img/arrow.svg" alt="Down arrow" />
+  </div>
 
-  <ul>
-    <li>
-      <a href="#/company">Company</a>
-    </li>
-    <li>
-      <a href="#/ale">Ale</a>
-    </li>
-    <li>
-      <a href="#/you">You</a>
-    </li>
-  </ul>
+  <nav>
+    <ul>
+      <li class="nav-col">
+        <ul class="nav-first-col">
+          <li><a href="#" ng-class="{ selected : checkClass(1)}">-</a></li>
+          <li><a href="#" ng-class="{ selected : checkClass(2)}">-</a></li>
+          <li><a href="#" ng-class="{ selected : checkClass(3)}">-</a></li>
+        </ul>
+      </li>
+      <li class="nav-col nav-menu">
+        <ul>
+          <li>
+            <a href="#/company" ng-mouseenter="addClass(1)" ng-mouseleave="removeClass()">Company</a>
+          </li>
+          <li>
+            <a href="#/ale" ng-mouseenter="addClass(2)" ng-mouseleave="removeClass()">Ale</a>
+          </li>
+          <li>
+            <a href="#/you" ng-mouseenter="addClass(3)" ng-mouseleave="removeClass()">You</a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-col">
+        <ul class="nav-last-col">
+          <li><a href="#" ng-class="{ selected : checkClass(1)}">-</a></li>
+          <li><a href="#" ng-class="{ selected : checkClass(2)}">-</a></li>
+          <li><a href="#" ng-class="{ selected : checkClass(3)}">-</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
 
-</div>
+</header>

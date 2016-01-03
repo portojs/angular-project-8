@@ -15,7 +15,19 @@ angular.module('aleApp.directives', [])
   .directive('mainHeader', function() {
     return {
       restrict: 'E',
-      templateUrl: 'partials/directives/main-header.html'
+      templateUrl: 'partials/directives/main-header.html',
+      link: function(scope, element, attrs) {
+        scope.selectedClass = 0;
+        scope.addClass = function(newClass) {
+          scope.selectedClass = newClass;
+        };
+        scope.removeClass = function() {
+          scope.selectedClass = 0;
+        };
+        scope.checkClass = function(newClass) {
+          return newClass === scope.selectedClass;
+        };
+      }
     }
   })
 
