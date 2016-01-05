@@ -12,13 +12,24 @@ angular.module('aleApp.directives', [])
     }
   })
 
-  .directive('mainHeader', function() {
+  .directive('mainHeader', function($location) {
     return {
       restrict: 'E',
       templateUrl: 'partials/directives/main-header.html',
       link: function(scope, element, attrs) {
         scope.selectedClass = 0;
-        scope.selectedClassTrue = 0;
+        scope.onLoadCheck = function() {
+          if ($location.path() === '/company') {
+            return 1;
+          } else if ($location.path() === '/ale') {
+            return 2;
+          } else if ($location.path() === '/you') {
+            return 3
+          } else {
+            return 1;
+          }
+        };
+        scope.selectedClassTrue = scope.onLoadCheck();
         scope.addClass = function(newClass) {
           scope.selectedClass = newClass;
         };
