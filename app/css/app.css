@@ -25,6 +25,7 @@ h4 {
 
 ul {
   padding: 0;
+  list-style: none;
 }
 
 a {
@@ -146,6 +147,7 @@ FOOTER
 ***************************************/
 
 .footer {
+  clear: both;
   text-align: center;
   font-size: 0.7em;
   padding-top: 5em;
@@ -162,6 +164,19 @@ FOOTER
 PAGE: COMPANY
 ***************************************/
 
+#creatures-list li {
+  color: #aaaaaa;
+  text-align: center;
+  display: inline-block;
+  width: 46.5%;
+  float: left;
+}
+
+#creatures-list img {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
 
 
 /***************************************
