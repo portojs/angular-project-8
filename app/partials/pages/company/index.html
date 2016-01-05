@@ -1,5 +1,16 @@
 <div id="page-company">
 
-  <h3>COMPANY PAGE</h3>
+  <h2>There is magic in the world</h2>
+  <p>People always wonder where does the magic go when they grow old.
+  Was it even there? Or maybe we just imagined it and there was no magic to begin with?
+  We know that there are elves, pixies and other magical creatures. And of course there are all things magical, ale including!</p>
 
+  <h2>Meet our magical assistants</h2>
+  <ul id="creatures-list">
+    <li ng-repeat="item in list">
+      <img ng-src="img/{{item.img}}" alt="Image of {{item.name}}">
+      <p>{{item.name}}</p>
+      <p>{{item.desc}}</p>
+    </li>
+  </ul>
 </div>

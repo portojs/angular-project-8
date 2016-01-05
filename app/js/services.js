@@ -5,4 +5,7 @@
 
 angular.module('aleApp.services', [
   'ngResource'
-]);
+])
+  .service('CompanyService',['$resource', function($resource) {
+    return $resource('json/company.json', {}, {});
+  }]);

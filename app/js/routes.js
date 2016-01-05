@@ -9,7 +9,8 @@ angular.module('aleApp.routes', [
   .config(['$routeProvider', function($routeProvider) {
     $routeProvider
       .when('/company', {
-        templateUrl: 'partials/pages/company/index.html'
+        templateUrl: 'partials/pages/company/index.html',
+        controller: 'CompanyIndexCtrl'
       })
       .when('/ale', {
         templateUrl: 'partials/pages/ale/index.html'
@@ -18,7 +19,8 @@ angular.module('aleApp.routes', [
         templateUrl: 'partials/pages/you/index.html'
       })
       .when('/', {
-        templateUrl: 'partials/pages/company/index.html'
+        templateUrl: 'partials/pages/company/index.html',
+        controller: 'CompanyIndexCtrl'
       })
       .otherwise({
         redirectTo: '/'

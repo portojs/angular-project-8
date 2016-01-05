@@ -3,4 +3,7 @@
  */
 'use strict';
 
-angular.module('aleApp.controllers', []);
+angular.module('aleApp.controllers', [])
+  .controller('CompanyIndexCtrl', ['$scope', 'CompanyService', function($scope, CompanyService) {
+    $scope.list = CompanyService.query();
+  }]);

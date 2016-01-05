@@ -1,0 +1,38 @@
+[
+  {
+    "id" : 1,
+    "name" : "Tweedle",
+    "desc" : "Master Brewer",
+    "img": "PlanescapeTorment_A.jpg"
+  },
+  {
+    "id" : 2,
+    "name" : "Beedle",
+    "desc" : "Junior Brewer",
+    "img": "PlanescapeTorment_B.jpg"
+  },
+  {
+    "id" : 3,
+    "name" : "Bombur",
+    "desc" : "Guard Captain",
+    "img": "PlanescapeTorment_C.jpg"
+  },
+  {
+    "id" : 4,
+    "name" : "Bobur",
+    "desc" : "Delivery Specialist",
+    "img": "PlanescapeTorment_D.jpg"
+  },
+  {
+    "id" : 5,
+    "name" : "Dvalin",
+    "desc" : "Magical Dew Gatherer",
+    "img": "PlanescapeTorment_E.jpg"
+  },
+  {
+    "id" : 6,
+    "name" : "Gloin",
+    "desc" : "Magical Dew Gatherer",
+    "img": "PlanescapeTorment_O.jpg"
+  }
+]
