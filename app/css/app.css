@@ -147,8 +147,15 @@ FOOTER
 
 .footer {
   text-align: center;
+  font-size: 0.7em;
+  padding-top: 5em;
 }
 
+.social-icon {
+  height: 20px;
+  width: 20px;
+  margin: 0 3px;
+}
 
 
 /***************************************
