@@ -11,6 +11,8 @@ angular.module('aleApp.controllers', [])
 
   .controller('AleIndexCtrl', ['$scope', 'AleService', function($scope, AleService) {
     $scope.ale = AleService.query();
+    $scope.total = 0;
+    $scope.price = 0;
   }])
 
   .controller('AleDetailCtrl', ['$scope', '$routeParams', 'AleService', function($scope, $routeParams, AleService) {
