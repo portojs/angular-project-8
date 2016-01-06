@@ -1,5 +1,24 @@
-<div id="main-table">
-
-  <h3>MAIN TABLE</h3>
-
-</div>
+<h2 id="table-header">Ale comparison table</h2>
+<table>
+  <thead>
+    <tr>
+      <th scope="col">Ale</th>
+      <th scope="col">Taste</th>
+      <th scope="col">Magic</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <td colspan="4"><i>*Data is based on recent research.</i></td>
+    </tr>
+  </tfoot>
+  <tbody>
+    <tr ng-repeat="item in table">
+      <th scope="row">{{ item.name }}</th>
+      <td>{{ item.taste }}</td>
+      <td>{{ item.magic }}</td>
+      <td>{{ item.price | currency }}</td>
+    </tr>
+  </tbody>
+</table>

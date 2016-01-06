@@ -8,4 +8,7 @@ angular.module('aleApp.services', [
 ])
   .service('CompanyService',['$resource', function($resource) {
     return $resource('json/company.json', {}, {});
+  }])
+  .service('TableService', ['$resource', function($resource) {
+    return $resource('json/table.json', {}, {});
   }]);

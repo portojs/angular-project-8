@@ -1,0 +1,38 @@
+[
+  {
+    "name" : "Touber",
+    "taste" : "Bitter green",
+    "magic" : "Zippy bubbles",
+    "price": 9.99
+  },
+  {
+    "name" : "Potter",
+    "taste" : "Serious jack",
+    "magic" : "Flying brooms",
+    "price": 12.99
+  },
+  {
+    "name" : "Hobbiton",
+    "taste" : "Dancing leaves",
+    "magic" : "Smoke dragons",
+    "price": 15.99
+  },
+  {
+    "name" : "Copton",
+    "taste" : "Bittersweet",
+    "magic" : "None",
+    "price": 10.99
+  },
+  {
+    "name" : "Fishberg",
+    "taste" : "Ocean waves",
+    "magic" : "None",
+    "price": 15.45
+  },
+  {
+    "name" : "Sansori",
+    "taste" : "Mellow honey",
+    "magic" : "None",
+    "price": 11.10
+  }
+]

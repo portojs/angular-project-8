@@ -40,8 +40,8 @@ a {
 .footer {
   width: 75%;
   max-width: 900px;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
   margin: auto;
 }
 
@@ -172,6 +172,8 @@ PAGE: COMPANY
   text-align: center;
 }
 
+/* employees list */
+
 #creatures-list li {
   color: #aaaaaa;
   text-align: center;
@@ -185,6 +187,39 @@ PAGE: COMPANY
   width: 100px;
   border-radius: 50%;
 }
+
+/* comparison table */
+
+#table-header {
+  clear: both;
+  padding-top: 2em;
+}
+
+table {
+  width: 100%;
+  border: 2px solid #fff;
+}
+
+thead {
+  color: #fff;
+  background-color: #ffa949;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.8);
+}
+
+th,
+td {
+  padding: 5px;
+  border: 2px solid #fff;
+}
+
+td {
+  background-color: #eee;
+}
+
+th[scope='row'] {
+  background-color: #ddd;
+}
+
 
 
 /***************************************

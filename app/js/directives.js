@@ -12,7 +12,7 @@ angular.module('aleApp.directives', [])
     }
   })
 
-  .directive('mainHeader', function($location) {
+  .directive('mainHeader', ['$location', function($location) {
     return {
       restrict: 'E',
       templateUrl: 'partials/directives/main-header.html',
@@ -49,12 +49,15 @@ angular.module('aleApp.directives', [])
         };
       }
     }
-  })
+  }])
 
   .directive('mainTable', function() {
     return {
       restrict: 'E',
-      templateUrl: 'partials/directives/main-table.html'
+      templateUrl: 'partials/directives/main-table.html',
+      controller: function($scope, TableService) {
+        $scope.table = TableService.query();
+      }
     }
   })
 
