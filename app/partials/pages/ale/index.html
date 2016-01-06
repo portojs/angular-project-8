@@ -1,5 +1,16 @@
 <div id="page-ale">
 
-  <h3>ALE PAGE</h3>
+  <ul>
+    <li ng-repeat="item in ale">
+      <a href="#/ale/ale-{{item.name}}">
+        <img ng-src="img/{{item.img}}" alt="Image of {{item.name}}">
+        <p>{{item.name}}</p>
+      </a>
+      <span>plus</span>
+      <span>minus</span>
+      <span>total</span>
+      <button type="button">order</button>
+    </li>
+  </ul>
 
 </div>

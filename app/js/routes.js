@@ -13,7 +13,8 @@ angular.module('aleApp.routes', [
         controller: 'CompanyIndexCtrl'
       })
       .when('/ale', {
-        templateUrl: 'partials/pages/ale/index.html'
+        templateUrl: 'partials/pages/ale/index.html',
+        controller: 'AleIndexCtrl'
       })
       .when('/you', {
         templateUrl: 'partials/pages/you/index.html'

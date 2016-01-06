@@ -1,0 +1,44 @@
+[
+  {
+    "name" : "Touber",
+    "taste" : "Bitter green",
+    "magic" : "Zippy bubbles",
+    "price" : 9.99,
+    "img" : "PlanescapeTorment_O.jpg"
+  },
+  {
+    "name" : "Potter",
+    "taste" : "Serious jack",
+    "magic" : "Flying brooms",
+    "price" : 12.99,
+    "img" : "PlanescapeTorment_O.jpg"
+  },
+  {
+    "name" : "Hobbiton",
+    "taste" : "Dancing leaves",
+    "magic" : "Smoke dragons",
+    "price" : 15.99,
+    "img" : "PlanescapeTorment_O.jpg"
+  },
+  {
+    "name" : "Dingy-sweet",
+    "taste" : "Custard cream",
+    "magic" : "Tiny stars",
+    "price" : 4.99,
+    "img" : "PlanescapeTorment_O.jpg"
+  },
+  {
+    "name" : "Flash",
+    "taste" : "Autumn fireworks",
+    "magic" : "Sizzling sprites",
+    "price" : 7.99,
+    "img" : "PlanescapeTorment_O.jpg"
+  },
+  {
+    "name" : "Uglich",
+    "taste" : "Flowering honeysuckle",
+    "magic" : "Future traverse",
+    "price" : 39.99,
+    "img" : "PlanescapeTorment_O.jpg"
+  }
+]
