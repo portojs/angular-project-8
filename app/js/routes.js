@@ -16,6 +16,10 @@ angular.module('aleApp.routes', [
         templateUrl: 'partials/pages/ale/index.html',
         controller: 'AleIndexCtrl'
       })
+      .when('/ale/:aleId', {
+        templateUrl: 'partials/pages/ale/detail.html',
+        controller: 'AleDetailCtrl'
+      })
       .when('/you', {
         templateUrl: 'partials/pages/you/index.html'
       })

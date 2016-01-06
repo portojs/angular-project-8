@@ -19,14 +19,17 @@ angular.module('aleApp.directives', [])
       link: function(scope, element, attrs) {
         scope.selectedClass = 0;
         scope.onLoadCheck = function() {
-          if ($location.path() === '/company') {
-            return 1;
-          } else if ($location.path() === '/ale') {
-            return 2;
-          } else if ($location.path() === '/you') {
-            return 3
-          } else {
-            return 1;
+          var path = $location.path();
+          switch(path) {
+            case '/company':
+            case '/':
+              return 1;
+            case '/you':
+              return 3;
+            case '/ale':
+              return 2;
+            default:
+              return 2;
           }
         };
         scope.selectedClassTrue = scope.onLoadCheck();

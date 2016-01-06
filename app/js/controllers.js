@@ -11,4 +11,8 @@ angular.module('aleApp.controllers', [])
 
   .controller('AleIndexCtrl', ['$scope', 'AleService', function($scope, AleService) {
     $scope.ale = AleService.query();
+  }])
+
+  .controller('AleDetailCtrl', ['$scope', '$routeParams', 'AleService', function($scope, $routeParams, AleService) {
+    $scope.ale = AleService.get({aleId: $routeParams.aleId});
   }]);
