@@ -26,13 +26,13 @@
   {
     "id" : 5,
     "name" : "Dvalin",
-    "desc" : "Magical Dew Gatherer",
+    "desc" : "Magic Dew Gatherer",
     "img": "PlanescapeTorment_E.jpg"
   },
   {
     "id" : 6,
     "name" : "Gloin",
-    "desc" : "Magical Dew Gatherer",
+    "desc" : "Magic Dew Gatherer",
     "img": "PlanescapeTorment_O.jpg"
   }
 ]

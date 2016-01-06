@@ -7,12 +7,14 @@
       We know that there are elves, pixies and other magical creatures. And of course there are all things magical, ale including!</p>
   </div>
 
-  <h2>Meet our magical assistants</h2>
-  <ul id="creatures-list">
+  <h2 id="employee-header">Our magical assistants</h2>
+  <ul id="employee-list">
     <li ng-repeat="item in list">
       <img ng-src="img/{{item.img}}" alt="Image of {{item.name}}">
-      <p>{{item.name}}</p>
-      <p>{{item.desc}}</p>
+      <p>
+        {{item.name}}<br/>
+        <i>{{item.desc}}</i>
+      </p>
     </li>
   </ul>
 
