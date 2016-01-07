@@ -6,7 +6,9 @@
 angular.module('aleApp.services', [
   'ngResource'
 ])
-
+  //.config('$resourceProvider', function($resourceProvider) {
+  //  $resourceProvider.default.stripTrailingSlashes = false;
+  //})
   .service('CompanyService',['$resource', function($resource) {
     return $resource('json/company.json', {}, {});
   }])

@@ -2,21 +2,18 @@
 
   <ul>
     <li ng-repeat="item in ale">
+      <a href="#/ale/ale-{{item.name}}">
+        <p class="ale-header">
+          <span class="ale-name">{{item.name}}</span>
+          <span class="ale-price">{{item.price | currency}}</span>
+        </p>
+      </a>
       <div>
-        <a href="#/ale/ale-{{item.name}}">
-          <img ng-src="img/{{item.img}}" alt="Image of {{item.name}}">
-          <p>
-            <span>{{item.name}}</span>
-            <span>{{item.price | currency}}</span>
-          </p>
-        </a>
+        <span class="plus">+</span>
+        <span class="minus">-</span>
       </div>
       <div>
-        <span>+</span>
-        <span>-</span>
-      </div>
-      <div>
-        <span>Total: {{ total }}</span>
+        <span>Items: {{ total }}</span>
         <span>Price: {{ price | currency }}</span>
       </div>
       <button type="button">order</button>

@@ -234,6 +234,33 @@ th[scope='row'] {
 PAGE: ALE
 ***************************************/
 
+p.ale-header {
+  background-color: #eee;
+  clear: both;
+}
+
+p.ale-header .ale-name {
+  display: inline-block;
+  width: 48%;
+}
+
+p.ale-header .ale-price {
+  display: inline-block;
+  width: 48%;
+  text-align: right;
+}
+
+span.plus,
+span.minus {
+  background-color: #eee;
+  display: inline-block;
+  font-size: 2.2rem;
+  width: 60px;
+  height: 60px;
+  padding: 1px;
+  border-radius: 50%;
+  text-align: center;
+}
 
 
 /***************************************
