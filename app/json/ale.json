@@ -4,6 +4,7 @@
     "taste" : "Bitter green",
     "magic" : "Zippy bubbles",
     "price" : 9.99,
+    "total" : 0,
     "img" : "PlanescapeTorment_O.jpg"
   },
   {
@@ -11,6 +12,7 @@
     "taste" : "Serious jack",
     "magic" : "Flying brooms",
     "price" : 12.99,
+    "total" : 0,
     "img" : "PlanescapeTorment_O.jpg"
   },
   {
@@ -18,6 +20,7 @@
     "taste" : "Dancing leaves",
     "magic" : "Smoke dragons",
     "price" : 15.99,
+    "total" : 0,
     "img" : "PlanescapeTorment_O.jpg"
   },
   {
@@ -25,6 +28,7 @@
     "taste" : "Custard cream",
     "magic" : "Tiny stars",
     "price" : 4.99,
+    "total" : 0,
     "img" : "PlanescapeTorment_O.jpg"
   },
   {
@@ -32,6 +36,7 @@
     "taste" : "Autumn fireworks",
     "magic" : "Sizzling sprites",
     "price" : 7.99,
+    "total" : 0,
     "img" : "PlanescapeTorment_O.jpg"
   },
   {
@@ -39,6 +44,7 @@
     "taste" : "Flowering honeysuckle",
     "magic" : "Future traverse",
     "price" : 39.99,
+    "total" : 0,
     "img" : "PlanescapeTorment_O.jpg"
   }
 ]

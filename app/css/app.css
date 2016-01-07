@@ -234,9 +234,16 @@ th[scope='row'] {
 PAGE: ALE
 ***************************************/
 
+#page-ale li {
+  display: block;
+  margin-bottom: 40px;
+}
+
 p.ale-header {
-  background-color: #eee;
-  clear: both;
+  color: #000;
+  background-color: #FFD5A6;
+  font-weight: bold;
+  margin-bottom: 0;
 }
 
 p.ale-header .ale-name {
@@ -250,6 +257,18 @@ p.ale-header .ale-price {
   text-align: right;
 }
 
+.ale-info {
+  padding-top: 2px;
+  margin-top: 2px;
+}
+
+.ale-info div {
+  display: inline-block;
+  width: 48%;
+  padding-top: 2px;
+  margin-top: 2px;
+}
+
 span.plus,
 span.minus {
   background-color: #eee;
@@ -260,7 +279,21 @@ span.minus {
   padding: 1px;
   border-radius: 50%;
   text-align: center;
+  cursor: pointer;
 }
+
+.total-price p {
+  margin: 0;
+}
+
+#page-ale button {
+  background-color: #fff;
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  border: 1px solid #999;
+}
+
 
 
 /***************************************
