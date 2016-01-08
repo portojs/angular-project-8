@@ -280,6 +280,24 @@ span.minus {
   border-radius: 50%;
   text-align: center;
   cursor: pointer;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+span.plus:hover,
+span.minus:hover,
+span.plus:focus,
+span.minus.focus {
+  background-color: #ccc;
+}
+
+span.plus:active,
+span.minus:active {
+  background-color: #666;
+  color: #fff;
 }
 
 .total-price p {
@@ -292,6 +310,22 @@ span.minus {
   padding: 10px;
   margin-top: 20px;
   border: 1px solid #999;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+#page-ale button:hover,
+#page-ale button:focus {
+  background-color: #ccc;
+}
+
+#page-ale button:active,
+#page-ale button:active {
+  background-color: #666;
+  color: #fff;
 }
 
 

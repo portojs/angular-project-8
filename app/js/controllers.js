@@ -11,14 +11,13 @@ angular.module('aleApp.controllers', [])
 
   .controller('AleIndexCtrl', ['$scope', 'AleService', function($scope, AleService) {
     $scope.ale = AleService.query();
-    $scope.total = 0;
-    $scope.price = 0;
-    $scope.totalPlus = function() {
-      $scope.total++;
+    $scope.orders = {};
+    $scope.orderAle = function(name, total, price) {
+      $scope.orders["name"]["total"] += total;
+      $scope.orders["name"]["price"] += total*price;
+      //total = 0;
+      console.log($scope.orders);
     };
-    $scope.totalMinus = function() {
-      $scope.total--;
-    }
   }])
 
   .controller('AleDetailCtrl', ['$scope', '$routeParams', 'AleService', function($scope, $routeParams, AleService) {
