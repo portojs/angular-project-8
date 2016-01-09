@@ -33,11 +33,37 @@ angular.module('aleApp.controllers', [])
     };
   }])
 
-  .controller('AleDetailCtrl', ['$scope', '$routeParams', 'AleService', function($scope, $routeParams, AleService) {
-    $scope.ale = AleService.get({aleId: $routeParams.aleId}, function(ale) {
+  .controller('AleDetailCtrl', ['$scope', '$routeParams', 'AleService', 'GravatarProvider', function($scope, $routeParams, AleService, GravatarProvider) {
+    $scope.gravatarUrl = function (email) {
+      return GravatarProvider(email);
+    };
+    $scope.ale = AleService.get({aleId: $routeParams.aleId}, function (ale) {
       $scope.mainImg = ale.img[0];
-  });
-    $scope.changeImg = function(image) {
+    });
+    $scope.changeImg = function (image) {
       $scope.mainImg = image;
     };
+    $scope.feedbacks = [
+      {
+        name: "Bob",
+        email: "bob@yahoo.com",
+        rating: 5,
+        desc: "Incredibly good"
+      },
+      {
+        name: "Bill",
+        email: "bill@yahoo.com",
+        rating: 4,
+        desc: "Quite good actually"
+      },
+      {
+        name: "Jove",
+        email: "jove@yahoo.com",
+        rating: 3,
+        desc: "So-so"
+      }
+    ];
+    $scope.showDetails = false;
+    $scope.showFeedback = false;
+    $scope.showFeedbackForm = false;
   }]);

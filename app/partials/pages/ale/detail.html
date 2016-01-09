@@ -8,14 +8,43 @@
       </li>
     </ul>
   </div>
-
+<!-- buttons -->
   <div>
     <span>Details</span>
     <span>Feedback</span>
   </div>
-  <ul>
-    <li>Taste: {{ale.taste}}</li>
-    <li>Magic: {{ale.magic}}</li>
-    <li>Price: {{ale.price}}</li>
-  </ul>
+<!-- details section  -->
+  <div id="details-section" ng-show="showDetails">
+    <ul>
+      <li>Taste: {{ale.taste}}</li>
+      <li>Magic: {{ale.magic}}</li>
+      <li>Price: {{ale.price}}</li>
+    </ul>
+  </div>
+<!-- feedback section -->
+  <div id="feedback-section" ng-show="showFeedback">
+    <ul>
+      <li ng-repeat="feedback in feedbacks">
+        <img ng-src="{{gravatarUrl(feedback.email)}}" alt="Image of {{feedback.name}}">
+        <b>Name:</b> {{feedback.name}}
+        <b>Rating:</b> {{feedback.rating}}
+        <b>Description:</b> {{feedback.desc}}
+      </li>
+    </ul>
+    <button type="button">Add feedback</button>
+  </div>
+<!-- feedback form -->
+  <div id="feedback-form-section" ng-show="showFeedbackForm">
+    <form>
+      <label for="form-text">Name:</label>
+      <input id="form-text" type="text">
+      <label for="form-email">Email:</label>
+      <input id="form-email" type="email">
+      <label for="form-rating">Rating:</label>
+      <select id="form-rating" ng-options="num for num in [1,2,3,4,5]"></select>
+      <label for="form-desc">Description:</label>
+      <textarea id="form-desc" placeholder="Enter your feedback here"></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
 </div>
