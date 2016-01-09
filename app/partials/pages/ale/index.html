@@ -1,7 +1,7 @@
 <div id="page-ale">
 
   <ul>
-    <li ng-repeat="item in ale">
+    <li ng-repeat="item in ale track by $index">
       <a href="#/ale/ale-{{item.name}}">
         <p class="ale-header">
           <span class="ale-name">{{item.name}}</span>

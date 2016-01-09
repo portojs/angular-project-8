@@ -9,7 +9,7 @@
 
   <h2 id="employee-header">Our magical assistants</h2>
   <ul id="employee-list">
-    <li ng-repeat="item in list">
+    <li ng-repeat="item in list track by item.id">
       <img ng-src="img/{{item.img}}" alt="Image of {{item.name}}">
       <p>
         {{item.name}}<br/>
