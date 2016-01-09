@@ -31,7 +31,7 @@
         <b>Description:</b> {{feedback.desc}}
       </li>
     </ul>
-    <button type="button">Add feedback</button>
+    <button type="button" ng-click="showFeedbackFormAct()">Add feedback</button>
   </div>
 <!-- feedback form -->
   <div id="feedback-form-section" ng-show="showFeedbackForm">
@@ -41,7 +41,7 @@
       <label for="form-email">Email:</label>
       <input id="form-email" type="email">
       <label for="form-rating">Rating:</label>
-      <select id="form-rating" ng-options="num for num in [1,2,3,4,5]"></select>
+      <select id="form-rating" ng-options="num for num in ratingsArray" ng-model="selectedRating"></select>
       <label for="form-desc">Description:</label>
       <textarea id="form-desc" placeholder="Enter your feedback here"></textarea>
       <button type="submit">Submit</button>

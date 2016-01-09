@@ -74,4 +74,8 @@ angular.module('aleApp.controllers', [])
       $scope.showDetails = false;
       $scope.showFeedback = true;
     };
+    $scope.showFeedbackFormAct = function() {
+      $scope.showFeedbackForm = !$scope.showFeedbackForm;
+    };
+    $scope.ratingsArray = [1,2,3,4,5];
   }]);
