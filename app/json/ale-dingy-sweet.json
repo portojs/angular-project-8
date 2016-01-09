@@ -3,5 +3,12 @@
   "taste" : "Custard cream",
   "magic" : "Tiny stars",
   "price" : 4.99,
-  "img" : "PlanescapeTorment_O.jpg"
+  "img" : [
+    "PlanescapeTorment_O.jpg",
+    "PlanescapeTorment_A.jpg",
+    "PlanescapeTorment_B.jpg",
+    "PlanescapeTorment_C.jpg",
+    "PlanescapeTorment_D.jpg",
+    "PlanescapeTorment_E.jpg"
+  ]
 }

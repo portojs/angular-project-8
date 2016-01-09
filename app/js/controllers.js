@@ -34,5 +34,10 @@ angular.module('aleApp.controllers', [])
   }])
 
   .controller('AleDetailCtrl', ['$scope', '$routeParams', 'AleService', function($scope, $routeParams, AleService) {
-    $scope.ale = AleService.get({aleId: $routeParams.aleId});
+    $scope.ale = AleService.get({aleId: $routeParams.aleId}, function(ale) {
+      $scope.mainImg = ale.img[0];
+  });
+    $scope.changeImg = function(image) {
+      $scope.mainImg = image;
+    };
   }]);

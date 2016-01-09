@@ -328,6 +328,31 @@ span.minus:active {
   color: #fff;
 }
 
+/* details page */
+
+#detail-page img {
+  border-radius: 50%;
+}
+
+img#main-img {
+  display: block;
+  margin: 0 auto;
+}
+
+#detail-page-thumbs {
+  text-align: center;
+}
+
+#detail-page-thumbs img {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+
+#detail-page-thumbs li {
+  display: inline-block;
+}
+
 
 
 /***************************************

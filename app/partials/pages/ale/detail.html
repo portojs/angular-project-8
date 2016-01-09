@@ -1,7 +1,16 @@
-<div>
-  <img ng-src="img/{{ale.img}}" alt="Image of {{ale.name}}">
-  {{ ale.name }}<br/>
-  {{ ale.taste }}<br/>
-  {{ ale.magic }}<br/>
-  {{ ale.price | currency }}<br/>
+<div id="detail-page">
+  <h2>{{ale.name}}</h2>
+  <img id="main-img" ng-src="img/{{mainImg}}" alt="Image of {{ale.name}}">
+  <div id="detail-page-thumbs">
+    <ul>
+      <li ng-repeat="img in ale.img">
+        <img ng-src="img/{{img}}" ng-click="changeImg(img)" alt="Image of {{ale.name}}">
+      </li>
+    </ul>
+  </div>
+  <ul>
+    <li>Taste: {{ale.taste}}</li>
+    <li>Magic: {{ale.magic}}</li>
+    <li>Price: {{ale.price}}</li>
+  </ul>
 </div>
