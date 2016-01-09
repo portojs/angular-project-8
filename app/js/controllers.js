@@ -63,7 +63,15 @@ angular.module('aleApp.controllers', [])
         desc: "So-so"
       }
     ];
-    $scope.showDetails = false;
+    $scope.showDetails = true;
     $scope.showFeedback = false;
     $scope.showFeedbackForm = false;
+    $scope.showDetailsAct = function() {
+      $scope.showFeedback = false;
+      $scope.showDetails = true;
+    };
+    $scope.showFeedbackAct = function() {
+      $scope.showDetails = false;
+      $scope.showFeedback = true;
+    };
   }]);
