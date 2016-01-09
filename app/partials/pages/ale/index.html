@@ -10,8 +10,8 @@
       </a>
       <div class="ale-info">
         <div>
-          <span class="plus" ng-click="item.total = item.total + 1">+</span>
-          <span class="minus" ng-click="item.total <=0 ? item.total = 0 : item.total = item.total - 1">-</span>
+          <span class="plus" ng-click="plusAle($index)">+</span>
+          <span class="minus" ng-click="minusAle($index)">-</span>
         </div>
         <div class="total-price">
           <p>

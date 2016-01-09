@@ -12,6 +12,12 @@ angular.module('aleApp.controllers', [])
   .controller('AleIndexCtrl', ['$scope', 'AleService', function($scope, AleService) {
     $scope.ale = AleService.query();
     $scope.orders = {};
+    $scope.plusAle = function($index) {
+      $scope.ale[$index].total += 1;
+    };
+    $scope.minusAle = function($index) {
+      $scope.ale[$index].total <= 0 ? $scope.ale[$index].total = 0 : $scope.ale[$index].total -= 1;
+    };
     $scope.orderAle = function($index) {
       if ($scope.orders[$scope.ale[$index].name]) {
         $scope.orders[$scope.ale[$index].name].total += $scope.ale[$index].total;
