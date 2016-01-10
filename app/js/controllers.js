@@ -12,6 +12,7 @@ angular.module('aleApp.controllers', [])
   .controller('AleIndexCtrl', ['$scope', 'AleService', function($scope, AleService) {
     $scope.ale = AleService.query();
     $scope.orders = {};
+    $scope.form = {};
     $scope.plusAle = function($index) {
       $scope.ale[$index].total += 1;
     };
@@ -40,6 +41,7 @@ angular.module('aleApp.controllers', [])
     $scope.ale = AleService.get({aleId: $routeParams.aleId}, function (ale) {
       $scope.mainImg = ale.img[0];
     });
+    $scope.buttonText = "Fill in all required fields";
     $scope.changeImg = function (image) {
       $scope.mainImg = image;
     };
@@ -77,4 +79,15 @@ angular.module('aleApp.controllers', [])
       $scope.showFeedbackForm = !$scope.showFeedbackForm;
     };
     $scope.ratingsArray = [1,2,3,4,5];
+    $scope.checkForm = function() {
+      if ($scope.feedbackForm.$valid) {
+        $scope.buttonText = "Submit";
+      } else {
+        $scope.buttonText = "Fill in all required fields";
+      }
+    };
+    $scope.submitForm = function() {
+      $scope.feedbacks.push($scope.form);
+      $scope.form = {};
+    };
   }]);
