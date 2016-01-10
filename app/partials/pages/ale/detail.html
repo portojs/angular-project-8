@@ -10,11 +10,11 @@
   </div>
 <!-- buttons -->
   <div>
-    <span ng-click="showDetailsAct()">Details</span>
-    <span ng-click="showFeedbackAct()">Feedback</span>
+    <span class="section-button" ng-class="{selected : showSection === 1}" ng-click="showSectionAct(1)">Details</span>
+    <span class="section-button" ng-class="{selected : showSection === 2}" ng-click="showSectionAct(2)">Feedback</span>
   </div>
 <!-- details section  -->
-  <div id="details-section" ng-show="showDetails">
+  <div id="details-section" ng-show="showSection === 1">
     <ul>
       <li>Taste: {{ale.taste}}</li>
       <li>Magic: {{ale.magic}}</li>
@@ -22,26 +22,32 @@
     </ul>
   </div>
 <!-- feedback section -->
-  <div id="feedback-section" ng-show="showFeedback">
+  <div id="feedback-section" ng-show="showSection === 2">
     <ul>
-      <li ng-repeat="feedback in feedbacks">
+      <li class="user" ng-repeat="feedback in feedbacks">
         <img ng-src="{{gravatarUrl(feedback.email)}}" alt="Image of {{feedback.name}}">
-        <b>Name:</b> {{feedback.name}}
-        <b>Rating:</b> {{feedback.rating}}
-        <b>Description:</b> {{feedback.desc}}
+        <ul id="user-details">
+          <li><b>Name:</b> {{feedback.name}}</li>
+          <li><b>Rating:</b> {{feedback.rating}}</li>
+          <li><b>Description:</b> {{feedback.desc}}</li>
+        </ul>
       </li>
     </ul>
-    <button type="button" ng-click="showFeedbackFormAct()">Add feedback</button>
+    <button type="button" ng-class="{selected : showFeedbackForm === true}" ng-click="showFeedbackFormAct()">Add feedback</button>
   </div>
 <!-- feedback form -->
   <div id="feedback-form-section" ng-show="showFeedbackForm">
     <form>
+      <span class="circle"></span>
       <label for="form-text">Name:</label>
       <input id="form-text" type="text">
+      <span class="circle"></span>
       <label for="form-email">Email:</label>
       <input id="form-email" type="email">
+      <span class="circle"></span>
       <label for="form-rating">Rating:</label>
       <select id="form-rating" ng-options="num for num in ratingsArray" ng-model="selectedRating"></select>
+      <span class="circle"></span>
       <label for="form-desc">Description:</label>
       <textarea id="form-desc" placeholder="Enter your feedback here"></textarea>
       <button type="submit">Submit</button>

@@ -12,8 +12,25 @@ html {
   box-sizing: inherit;
 }
 
-body {
+body,
+button {
   font: 1em/1.5 'Arapey', serif;
+}
+
+#feedback-form-section textarea::-webkit-input-placeholder {
+  font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+#feedback-form-section textarea:-ms-input-placeholder {
+  font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+#feedback-form-section textarea:-moz-placeholder {
+  font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+#feedback-form-section textarea::-moz-placeholder {
+  font-family: 'Alegreya Sans SC', sans-serif;
 }
 
 h1,
@@ -353,12 +370,93 @@ img#main-img {
   display: inline-block;
 }
 
-#detail-page span {
-  background-color: #999;
+.section-button {
+  color: #000;
+  background-color: #fff;
   display: inline-block;
   text-align: center;
   width: 48%;
+  border: 1px solid #000;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
 }
+
+.section-button:hover,
+.section-button:focus {
+  background-color: #FFD5A6;
+}
+
+.section-button.selected {
+  background-color: #FFD5A6;
+}
+
+/* feedback section */
+
+#feedback-section .user {
+  padding: 10px 0;
+}
+
+#feedback-section img {
+  height: 60px;
+  width: 60px;
+}
+
+#feedback-section #user-details {
+  display: inline-block;
+  width: 70%;
+  margin: 0 0 0 20px;
+}
+
+#feedback-section button {
+  color: #000;
+  background-color: #fff;
+  width: 100%;
+  border: 1px solid #000;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+#feedback-section button:hover,
+#feedback-section button:focus {
+  background-color: #FFD5A6;
+}
+
+#feedback-section button.selected {
+  background-color: #FFD5A6;
+}
+
+/* feedback form */
+
+#feedback-form-section {
+  padding: 20px 0 0 0;
+}
+
+#feedback-form-section label {
+  /*display: block;*/
+  text-align: center;
+}
+
+#feedback-form-section input,
+#feedback-form-section select,
+#feedback-form-section textarea {
+  width: 100%;
+}
+
+span.circle {
+  background-color: #FFD5A6;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
 
 
 /***************************************
