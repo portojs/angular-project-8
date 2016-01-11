@@ -251,6 +251,14 @@ th[scope='row'] {
 PAGE: ALE
 ***************************************/
 
+/*#page-ale-sort-elements input,*/
+/*#page-ale-sort-elements select {*/
+  /*width: 100%;*/
+  /*padding: 0;*/
+  /*margin: 0;*/
+  /*border: 1px solid black;*/
+/*}*/
+
 #page-ale li {
   display: block;
   margin-bottom: 40px;
@@ -434,12 +442,19 @@ img#main-img {
 
 /* feedback form */
 
+span.circle {
+  background-color: #FFD5A6;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
 #feedback-form-section {
   padding: 20px 0 0 0;
 }
 
 #feedback-form-section label {
-  /*display: block;*/
   text-align: center;
 }
 
@@ -449,12 +464,20 @@ img#main-img {
   width: 100%;
 }
 
-span.circle {
+#feedback-form-section button {
+  width: 100%;
+  background-color: #fff;
+  margin-top: 20px;
+  border: 1px solid black;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+#feedback-form-section button:hover {
   background-color: #FFD5A6;
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
 }
 
 

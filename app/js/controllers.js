@@ -11,6 +11,21 @@ angular.module('aleApp.controllers', [])
 
   .controller('AleIndexCtrl', ['$scope', 'AleService', function($scope, AleService) {
     $scope.ale = AleService.query();
+    $scope.sortCats = [
+      {
+        text: 'By price: high to low',
+        value: '-price'
+      },
+      {
+        text: 'By price: low to high',
+        value: 'price'
+      },
+      {
+        text: 'By name',
+        value: 'name'
+      }
+    ];
+    $scope.aleSort = '';
     $scope.orders = {};
     $scope.form = {};
     $scope.plusAle = function($index) {
@@ -85,6 +100,8 @@ angular.module('aleApp.controllers', [])
       } else {
         $scope.buttonText = "Fill in all required fields";
       }
+    };
+    $scope.checkFormField = function() {
     };
     $scope.submitForm = function() {
       $scope.feedbacks.push($scope.form);

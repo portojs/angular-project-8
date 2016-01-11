@@ -40,13 +40,17 @@
     <form ng-submit="feedbackForm.$valid && submitForm()" name="feedbackForm" novalidate="novalidate">
       <span class="circle"></span>
       <label for="form-text">Name:</label>
-      <input id="form-text" ng-change="checkForm()" ng-model="form.name" type="text" required />
+      <input class="buba" id="form-text" ng-change="checkForm()" ng-blur="checkFormField()" ng-model="form.name" type="text" required />
       <span class="circle"></span>
       <label for="form-email">Email:</label>
-      <input id="form-email" ng-change="checkForm()" ng-model="form.email" type="email" required />
+      <input id="form-email" ng-change="checkForm()" ng-blur="checkFormField()" ng-model="form.email" type="email" required />
       <span class="circle"></span>
       <label for="form-rating">Rating:</label>
-      <select id="form-rating" ng-options="num for num in ratingsArray" ng-model="form.rating" ng-change="checkForm()" required></select>
+      <select id="form-rating"
+              ng-options="num for num in ratingsArray"
+              ng-model="form.rating"
+              ng-change="checkForm()"
+              ng-blur="checkFormField()" required></select>
       <span class="circle"></span>
       <label for="form-desc">Description:</label>
       <textarea id="form-desc" ng-model="form.desc" placeholder="Enter your feedback here"></textarea>

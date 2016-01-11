@@ -1,7 +1,14 @@
 <div id="page-ale">
 
+  <div id="page-ale-sort-elements">
+    <input ng-model="aleSearch" type="search" placeholder="Type in to search..." />
+    <select ng-model="aleSort" ng-options="item.value as item.text for item in sortCats">
+      <option value="">-- Sort category --</option>
+    </select>
+  </div>
+
   <ul>
-    <li ng-repeat="item in ale track by $index">
+    <li ng-repeat="item in ale | orderBy: aleSort | filter:{name:aleSearch} as results track by $index">
       <a href="#/ale/ale-{{item.name}}">
         <p class="ale-header">
           <span class="ale-name">{{item.name}}</span>
@@ -21,6 +28,9 @@
         </div>
       </div>
       <button type="button" ng-click="orderAle($index)">order</button>
+    </li>
+    <li ng-if="results.length === 0">
+      <strong>No results found...</strong>
     </li>
   </ul>
 
