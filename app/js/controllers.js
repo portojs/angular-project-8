@@ -80,7 +80,7 @@ angular.module('aleApp.controllers', [])
         desc: "So-so"
       }
     ];
-    $scope.showSection = 0;
+    $scope.showSection = 1;
     $scope.showFeedbackForm = false;
     $scope.showSectionAct = function(section) {
       if (section === 1) {

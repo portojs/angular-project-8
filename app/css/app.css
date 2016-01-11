@@ -251,13 +251,18 @@ th[scope='row'] {
 PAGE: ALE
 ***************************************/
 
-/*#page-ale-sort-elements input,*/
-/*#page-ale-sort-elements select {*/
-  /*width: 100%;*/
-  /*padding: 0;*/
-  /*margin: 0;*/
-  /*border: 1px solid black;*/
-/*}*/
+#page-ale-sort-elements input,
+#page-ale-sort-elements select {
+  width: 100%;
+  padding: 0;
+  margin: 0 0 20px 0;
+  border: 0;
+  border-bottom: 1px solid #999;
+}
+
+#page-ale-sort-elements select {
+  border: 1px solid #999;
+}
 
 #page-ale li {
   display: block;
@@ -269,6 +274,16 @@ p.ale-header {
   background-color: #FFD5A6;
   font-weight: bold;
   margin-bottom: 0;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+p.ale-header:hover,
+p.ale-header:focus {
+  background-color: #F39329;
 }
 
 p.ale-header .ale-name {
@@ -353,7 +368,7 @@ span.minus:active {
   color: #fff;
 }
 
-/* details page */
+/* details page - images */
 
 #detail-page img {
   border-radius: 50%;
@@ -378,6 +393,14 @@ img#main-img {
   display: inline-block;
 }
 
+/* details page - order section */
+
+.order-section {
+  display: inline-block;
+  width: 33%;
+}
+
+/* details page - tab selection */
 .section-button {
   color: #000;
   background-color: #fff;
