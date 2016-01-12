@@ -9,7 +9,7 @@ angular.module('aleApp.controllers', [])
     $scope.list = CompanyService.query();
   }])
 
-  .controller('AleIndexCtrl', ['$scope', 'AleService', function($scope, AleService) {
+  .controller('AleIndexCtrl', ['$scope', 'AleService', 'OrderService', function($scope, AleService, OrderService) {
     $scope.ale = AleService.query();
     $scope.sortCats = [
       {
@@ -35,17 +35,18 @@ angular.module('aleApp.controllers', [])
       $scope.ale[$index].total <= 0 ? $scope.ale[$index].total = 0 : $scope.ale[$index].total -= 1;
     };
     $scope.orderAle = function($index) {
-      if ($scope.orders[$scope.ale[$index].name]) {
-        $scope.orders[$scope.ale[$index].name].total += $scope.ale[$index].total;
-        $scope.orders[$scope.ale[$index].name].price += $scope.ale[$index].total * $scope.ale[$index].price;
-      } else {
-        $scope.orders[$scope.ale[$index].name] = {};
-        $scope.orders[$scope.ale[$index].name].name = $scope.ale[$index].name;
-        $scope.orders[$scope.ale[$index].name].total = $scope.ale[$index].total;
-        $scope.orders[$scope.ale[$index].name].price = $scope.ale[$index].total * $scope.ale[$index].price;
-      }
+      OrderService.setOrder($scope.ale[$index].name, $scope.ale[$index].total, $scope.ale[$index].price);
+      //if ($scope.orders[$scope.ale[$index].name]) {
+      //  $scope.orders[$scope.ale[$index].name].total += $scope.ale[$index].total;
+      //  $scope.orders[$scope.ale[$index].name].price += $scope.ale[$index].total * $scope.ale[$index].price;
+      //} else {
+      //  $scope.orders[$scope.ale[$index].name] = {};
+      //  $scope.orders[$scope.ale[$index].name].name = $scope.ale[$index].name;
+      //  $scope.orders[$scope.ale[$index].name].total = $scope.ale[$index].total;
+      //  $scope.orders[$scope.ale[$index].name].price = $scope.ale[$index].total * $scope.ale[$index].price;
+      //}
       $scope.ale[$index].total = 0;
-      console.log($scope.orders);
+      //console.log($scope.orders);
     };
   }])
 

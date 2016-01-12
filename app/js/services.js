@@ -22,6 +22,7 @@ angular.module('aleApp.services', [
       query: {method: 'GET', params: {aleId: 'ale'}, isArray: true}
     });
   }])
+
   .provider('GravatarProvider', function() {
     var avatarSize = 80;
     var avatarUrl = 'http://www.gravatar.com/avatar/';
@@ -29,5 +30,26 @@ angular.module('aleApp.services', [
       return function(email) {
         return avatarUrl + CryptoJS.MD5(email) + "?size:=" + avatarSize.toString();
       };
+    };
+  })
+
+  .service('OrderService', function() {
+    var orders = {};
+    return {
+      getOrders: function() {
+        return orders;
+      },
+      setOrder: function(name, total, price) {
+        if (orders[name]) {
+          orders[name].total += total;
+          orders[name].price += total * price;
+        } else {
+          orders[name] = {};
+          orders[name].name = name;
+          orders[name].total = total;
+          orders[name].price = total * price;
+        }
+        console.log(orders);
+      }
     };
   });
