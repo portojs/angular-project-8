@@ -50,16 +50,11 @@ angular.module('aleApp.controllers', [])
   }])
 
   .controller('AleDetailCtrl', ['$scope', '$routeParams', 'AleService', 'GravatarProvider', function($scope, $routeParams, AleService, GravatarProvider) {
-    $scope.gravatarUrl = function (email) {
-      return GravatarProvider(email);
-    };
     $scope.ale = AleService.get({aleId: $routeParams.aleId}, function (ale) {
       $scope.mainImg = ale.img[0];
     });
-    $scope.buttonText = "Fill in all required fields";
-    $scope.changeImg = function (image) {
-      $scope.mainImg = image;
-    };
+    $scope.total = 0;
+    $scope.orders = [];
     $scope.feedbacks = [
       {
         name: "Bob",
@@ -80,8 +75,30 @@ angular.module('aleApp.controllers', [])
         desc: "So-so"
       }
     ];
+    $scope.ratingsArray = [1,2,3,4,5];
     $scope.showSection = 1;
     $scope.showFeedbackForm = false;
+    $scope.buttonText = "Fill in all required fields";
+    $scope.gravatarUrl = function (email) {
+      return GravatarProvider(email);
+    };
+    $scope.changeImg = function (image) {
+      $scope.mainImg = image;
+    };
+    $scope.plusAle = function() {
+      $scope.total++;
+    };
+    $scope.minusAle = function() {
+      if ($scope.total > 0) {
+        $scope.total--;
+      }
+    };
+    $scope.orderAle = function() {
+      if ($scope.total > 0) {
+        $scope.orders.push({name: $scope.ale.name, total: $scope.total, price: $scope.total * $scope.ale.price});
+      }
+      console.log($scope.orders);
+    };
     $scope.showSectionAct = function(section) {
       if (section === 1) {
         $scope.showFeedbackForm = false;
@@ -93,7 +110,6 @@ angular.module('aleApp.controllers', [])
     $scope.showFeedbackFormAct = function() {
       $scope.showFeedbackForm = !$scope.showFeedbackForm;
     };
-    $scope.ratingsArray = [1,2,3,4,5];
     $scope.checkForm = function() {
       if ($scope.feedbackForm.$valid) {
         $scope.buttonText = "Submit";

@@ -395,12 +395,37 @@ img#main-img {
 
 /* details page - order section */
 
-.order-section {
+.order li {
   display: inline-block;
-  width: 33%;
+}
+
+.order li:first-child {
+  float: left;
+}
+
+.order li:last-child {
+  float: right;
+}
+
+.order p {
+  display: block;
+  margin: 0;
+}
+
+.order button {
+  clear: both;
+  background-color: #fff;
+  width: 100%;
+  margin: 20px 0;
+  border: 1px solid black;
 }
 
 /* details page - tab selection */
+
+#section-buttons {
+  margin-bottom: 20px;
+}
+
 .section-button {
   color: #000;
   background-color: #fff;
@@ -414,6 +439,14 @@ img#main-img {
   -ms-transition: all 0.5s;
   -o-transition: all 0.5s;
   transition: all 0.5s;
+}
+
+.section-button:first-child {
+  float: left;
+}
+
+.section-button:last-child {
+  float: right;
 }
 
 .section-button:hover,

@@ -11,22 +11,22 @@
   </div>
 <!-- order section -->
   <div class="order">
-    <div class="order-section">
-      <span class="plus" ng-click="plusAle()">+</span>
-      <span class="minus" ng-click="minusAle()">-</span>
-    </div>
-    <div class="order-section">
-      <p>
-        Items: {{ ale.total }}<br/>
-        Price: {{ ale.total * ale.price | currency }}
-      </p>
-    </div>
-    <div class="order-section">
-      <button type="button" ng-click="orderAle($index)">order</button>
-    </div>
+    <ul>
+      <li>
+        <span class="plus" ng-click="plusAle()">+</span>
+        <span class="minus" ng-click="minusAle()">-</span>
+      </li>
+      <li>
+        <div>
+          Items: {{ total }}<br/>
+          Price: {{ total * ale.price | currency }}
+        </div>
+      </li>
+    </ul>
+    <button type="button" ng-click="orderAle()">order</button>
   </div>
   <!-- buttons -->
-  <div>
+  <div id="section-buttons">
     <span class="section-button" ng-class="{selected : showSection === 1}" ng-click="showSectionAct(1)">Details</span>
     <span class="section-button" ng-class="{selected : showSection === 2}" ng-click="showSectionAct(2)">Feedback</span>
   </div>
