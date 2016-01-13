@@ -34,7 +34,7 @@ angular.module('aleApp.services', [
   })
 
   .service('OrderService', function() {
-    var orders = {};
+    var orders = [];
     return {
       getOrders: function() {
         return orders;
@@ -50,6 +50,19 @@ angular.module('aleApp.services', [
           orders[name].price = total * price;
         }
         console.log(orders);
+      }
+    };
+  })
+
+  .service('UserService', function() {
+    var user = {};
+    return {
+      getUser: function() {
+        return user;
+      },
+      setUser: function(userDetails) {
+        user.name = userDetails.name;
+        user.email = userDetails.email;
       }
     };
   });

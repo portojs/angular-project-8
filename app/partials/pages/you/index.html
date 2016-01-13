@@ -1,12 +1,29 @@
 <div id="page-you">
 
+  <h2>{{ regUser.name ? "Your details" : "Please register" }}</h2>
+
   <form ng-hide="regUser.name" ng-submit="userForm.$valid && submitForm()" name="userForm" novalidate="novalidate">
     <label for="form-you-name">Enter your name:</label>
-    <input ng-model="form.name" id="form-you-name" type="text" required />
+    <input ng-change="checkForm()" ng-model="form.name" id="form-you-name" type="text" required />
     <label for="form-you-email">Enter your email:</label>
-    <input ng-model="form.email" id="form-you-email" type="email" required />
-    <button type="submit">Submit</button>
+    <input ng-change="checkForm()" ng-model="form.email" id="form-you-email" type="email" required />
+    <button type="submit">{{ buttonText }}</button>
   </form>
 
-  <div ng-show="regUser.name">Here you go!</div>
+  <div ng-show="regUser.name">
+    <ul>
+      <li><img ng-src="{{userImage(regUser.email)}}" alt="Image of {{ regUser.name }}"/></li>
+      <li>Name: {{ regUser.name }}</li>
+      <li>Email: {{ regUser.email }}</li>
+      <li>Current orders:
+        <ul>
+          <li ng-repeat="order in OrderService.getOrders()">
+            <b>Name:</b> {{ order.name }} <br/>
+            <b>Pcs:</b> {{ order.total }} <br/>
+            <b>Price:</b> {{ order.price }}
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
 </div>

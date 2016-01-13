@@ -116,12 +116,22 @@ angular.module('aleApp.controllers', [])
     };
   }])
 
-  .controller('YouIndexCtrl', ['$scope', 'OrderService', 'GravatarProvider', function($scope, OrderService, GravatarProvider) {
-    $scope.regUser = {};
+  .controller('YouIndexCtrl', ['$scope', 'OrderService', 'UserService', 'GravatarProvider', function($scope, OrderService, UserService, GravatarProvider) {
+    $scope.buttonText = "Fill in all fields";
+    $scope.regUser = UserService.getUser();
+    $scope.orders = OrderService.getOrders();
     $scope.submitForm = function() {
-      $scope.regUser["name"] = $scope.form.name;
-      $scope.regUser["email"] = $scope.form.email;
-      console.log($scope.regUser);
+      UserService.setUser($scope.form);
       $scope.form = {};
+    };
+    $scope.checkForm = function() {
+      if ($scope.userForm.$valid) {
+        $scope.buttonText = "Submit";
+      } else {
+        $scope.buttonText = "Fill in all fields";
+      }
+    };
+    $scope.userImage = function(email) {
+      return GravatarProvider(email);
     };
   }]);
