@@ -40,16 +40,20 @@ angular.module('aleApp.services', [
         return orders;
       },
       setOrder: function(name, total, price) {
-        if (orders[name]) {
-          orders[name].total += total;
-          orders[name].price += total * price;
+        if (orders.length > 0) {
+          for (var i = 0, len = orders.length; i < len; i++) {
+            if (orders[i].name === name) {
+              orders[i].total += total;
+              orders[i].price += total * price;
+              //console.log(orders);
+              return;
+            }
+          }
+          orders.push({'name':name, 'total':total, 'price': total * price});
         } else {
-          orders[name] = {};
-          orders[name].name = name;
-          orders[name].total = total;
-          orders[name].price = total * price;
+          orders.push({'name':name, 'total':total, 'price': total * price});
         }
-        console.log(orders);
+        //console.log(orders);
       }
     };
   })
