@@ -1,5 +1,12 @@
 <div id="page-you">
 
-  <h3>YOU PAGE</h3>
+  <form ng-hide="regUser.name" ng-submit="userForm.$valid && submitForm()" name="userForm" novalidate="novalidate">
+    <label for="form-you-name">Enter your name:</label>
+    <input ng-model="form.name" id="form-you-name" type="text" required />
+    <label for="form-you-email">Enter your email:</label>
+    <input ng-model="form.email" id="form-you-email" type="email" required />
+    <button type="submit">Submit</button>
+  </form>
 
+  <div ng-show="regUser.name">Here you go!</div>
 </div>

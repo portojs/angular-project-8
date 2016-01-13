@@ -36,17 +36,7 @@ angular.module('aleApp.controllers', [])
     };
     $scope.orderAle = function($index) {
       OrderService.setOrder($scope.ale[$index].name, $scope.ale[$index].total, $scope.ale[$index].price);
-      //if ($scope.orders[$scope.ale[$index].name]) {
-      //  $scope.orders[$scope.ale[$index].name].total += $scope.ale[$index].total;
-      //  $scope.orders[$scope.ale[$index].name].price += $scope.ale[$index].total * $scope.ale[$index].price;
-      //} else {
-      //  $scope.orders[$scope.ale[$index].name] = {};
-      //  $scope.orders[$scope.ale[$index].name].name = $scope.ale[$index].name;
-      //  $scope.orders[$scope.ale[$index].name].total = $scope.ale[$index].total;
-      //  $scope.orders[$scope.ale[$index].name].price = $scope.ale[$index].total * $scope.ale[$index].price;
-      //}
       $scope.ale[$index].total = 0;
-      //console.log($scope.orders);
     };
   }])
 
@@ -122,6 +112,16 @@ angular.module('aleApp.controllers', [])
     };
     $scope.submitForm = function() {
       $scope.feedbacks.push($scope.form);
+      $scope.form = {};
+    };
+  }])
+
+  .controller('YouIndexCtrl', ['$scope', 'OrderService', 'GravatarProvider', function($scope, OrderService, GravatarProvider) {
+    $scope.regUser = {};
+    $scope.submitForm = function() {
+      $scope.regUser["name"] = $scope.form.name;
+      $scope.regUser["email"] = $scope.form.email;
+      console.log($scope.regUser);
       $scope.form = {};
     };
   }]);

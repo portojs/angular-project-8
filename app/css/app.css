@@ -418,6 +418,16 @@ img#main-img {
   width: 100%;
   margin: 20px 0;
   border: 1px solid black;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.order button:hover,
+.order button:focus {
+  background-color: #FFD5A6;
 }
 
 /* details page - tab selection */
