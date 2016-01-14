@@ -45,7 +45,6 @@ angular.module('aleApp.services', [
             if (orders[i].name === name) {
               orders[i].total += total;
               orders[i].price += total * price;
-              //console.log(orders);
               return;
             }
           }
@@ -53,7 +52,10 @@ angular.module('aleApp.services', [
         } else {
           orders.push({'name':name, 'total':total, 'price': total * price});
         }
-        //console.log(orders);
+      },
+      deleteOrder: function (order) {
+        orders.splice(orders.indexOf(order), 1);
+        console.log(orders.indexOf(order));
       }
     };
   })

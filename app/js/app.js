@@ -5,5 +5,6 @@ angular.module('aleApp', [
   'aleApp.routes',
   'aleApp.controllers',
   'aleApp.directives',
-  'aleApp.filters'
+  'aleApp.filters',
+  'ngAnimate'
 ]);

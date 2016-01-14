@@ -28,15 +28,15 @@ angular.module('aleApp.controllers', [])
     $scope.aleSort = '';
     $scope.orders = {};
     $scope.form = {};
-    $scope.plusAle = function($index) {
-      $scope.ale[$index].total += 1;
+    $scope.plusAle = function(item) {
+      item.total += 1;
     };
-    $scope.minusAle = function($index) {
-      $scope.ale[$index].total <= 0 ? $scope.ale[$index].total = 0 : $scope.ale[$index].total -= 1;
+    $scope.minusAle = function(item) {
+      item.total <= 0 ? item.total = 0 : item.total -= 1;
     };
-    $scope.orderAle = function($index) {
-      OrderService.setOrder($scope.ale[$index].name, $scope.ale[$index].total, $scope.ale[$index].price);
-      $scope.ale[$index].total = 0;
+    $scope.orderAle = function(item) {
+      OrderService.setOrder(item.name, item.total, item.price);
+      item.total = 0;
     };
   }])
 
@@ -134,4 +134,7 @@ angular.module('aleApp.controllers', [])
     $scope.userImage = function(email) {
       return GravatarProvider(email);
     };
+    $scope.cancelOrder = function(order) {
+      OrderService.deleteOrder(order);
+    }
   }]);

@@ -1,0 +1,116 @@
+/*******************************************
+NG-REPEAT ANIMATIONS
+********************************************/
+
+.order-list.ng-enter,
+.order-list.ng-leave,
+.order-list.ng-move,
+.ale-list.ng-enter,
+.ale-list.ng-leave,
+.ale-list.ng-move {
+  -webkit-transition: 0.5s linear all;
+  -moz-transition: 0.5s linear all;
+  -ms-transition: 0.5s linear all;
+  -o-transition: 0.5s linear all;
+  transition: 0.5s linear all;
+}
+
+.order-list.ng-enter,
+.order-list.ng-move,
+.ale-list.ng-enter,
+.ale-list.ng-move {
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.order-list.ng-enter.ng-enter-active,
+.order-list.ng-move.ng-move-active,
+.ale-list.ng-enter.ng-enter-active,
+.ale-list.ng-move.ng-move-active {
+  opacity: 1;
+  height: auto;
+}
+
+.order-list.ng-leave,
+.ale-list.ng-leave {
+  opacity: 1;
+  overflow: hidden;
+}
+
+.order-list.ng-leave.ng-leave-active,
+.ale-list.ng-leave.ng-leave-active {
+  opacity: 0;
+  height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+
+
+/*******************************************
+NG-VIEW ANIMATIONS
+********************************************/
+
+.view-container {
+  position: relative;
+}
+
+.view-frame.ng-enter,
+.view-frame.ng-leave {
+  background: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.view-frame.ng-enter {
+  -webkit-transition: 0.5s fade-in;
+  -moz-transition: 0.5s fade-in;
+  -ms-transition: 0.5s fade-in;
+  -o-transition: 0.5s fade-in;
+  transition: 0.5s fade-in;
+  animation: 0.5s fade-in;
+  z-index: 100;
+}
+
+.view-frame.ng-leave {
+  -webkit-transition: 0.5s fade-out;
+  -moz-transition: 0.5s fade-out;
+  -ms-transition: 0.5s fade-out;
+  -o-transition: 0.5s fade-out;
+  transition: 0.5s fade-out;
+  animation: 0.5s fade-out;
+  z-index: 99;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@-moz-keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@-webkit-keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@-moz-keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@-webkit-keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}

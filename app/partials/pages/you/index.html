@@ -17,10 +17,12 @@
       <li>Email: {{ regUser.email }}</li>
       <li>Current orders:
         <ul>
-          <li ng-repeat="order in OrderService.getOrders()">
+          <li class="order-list" ng-repeat="order in orders">
             <b>Name:</b> {{ order.name }} <br/>
             <b>Pcs:</b> {{ order.total }} <br/>
-            <b>Price:</b> {{ order.price }}
+            <b>Price:</b> {{ order.price }} <br/>
+            <button ng-click="" class="button-change" type="button">Change</button>
+            <button ng-click="cancelOrder(order)" class="button-cancel" type="button">Cancel</button>
           </li>
         </ul>
       </li>

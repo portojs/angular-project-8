@@ -534,7 +534,7 @@ span.circle {
   width: 100%;
   background-color: #fff;
   margin-top: 20px;
-  border: 1px solid black;
+  border: 1px solid #000;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -ms-transition: all 0.5s;
@@ -551,6 +551,51 @@ span.circle {
 /***************************************
 PAGE: YOU
 ***************************************/
+
+#page-you label,
+#page-you input {
+  display: block;
+}
+
+#page-you input,
+#page-you button {
+  width: 100%;
+}
+
+#page-you button {
+  margin-top: 15px;
+  border: 1px solid #777;
+  background: #fff;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+#page-you button:hover,
+#page-you button:focus {
+  background-color: #FFD5A6;
+}
+
+.order-list {
+  clear: both;
+  padding: 15px 0;
+}
+#page-you button.button-change {
+  float: left;
+}
+
+#page-you button.button-cancel {
+  float: right;
+}
+
+#page-you button.button-change,
+#page-you button.button-cancel {
+  display: inline-block;
+  width: 48%;
+  margin: 10px 0;
+}
 
 
 
