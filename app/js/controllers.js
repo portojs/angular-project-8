@@ -29,14 +29,14 @@ angular.module('aleApp.controllers', [])
     $scope.orders = {};
     $scope.form = {};
     $scope.plusAle = function(item) {
-      item.total += 1;
+      item.pcs += 1;
     };
     $scope.minusAle = function(item) {
-      item.total <= 0 ? item.total = 0 : item.total -= 1;
+      item.pcs <= 0 ? item.pcs = 0 : item.pcs -= 1;
     };
     $scope.orderAle = function(item) {
-      OrderService.setOrder(item.name, item.total, item.price);
-      item.total = 0;
+      OrderService.setOrder(item.name, item.pcs, item.price);
+      item.pcs = 0;
     };
   }])
 
@@ -44,7 +44,7 @@ angular.module('aleApp.controllers', [])
     $scope.ale = AleService.get({aleId: $routeParams.aleId}, function (ale) {
       $scope.mainImg = ale.img[0];
     });
-    $scope.total = 0;
+    $scope.pcs = 0;
     $scope.orders = [];
     $scope.feedbacks = [
       {
@@ -77,16 +77,16 @@ angular.module('aleApp.controllers', [])
       $scope.mainImg = image;
     };
     $scope.plusAle = function() {
-      $scope.total++;
+      $scope.pcs++;
     };
     $scope.minusAle = function() {
-      if ($scope.total > 0) {
-        $scope.total--;
+      if ($scope.pcs > 0) {
+        $scope.pcs--;
       }
     };
     $scope.orderAle = function() {
-      if ($scope.total > 0) {
-        $scope.orders.push({name: $scope.ale.name, total: $scope.total, price: $scope.total * $scope.ale.price});
+      if ($scope.pcs > 0) {
+        $scope.orders.push({name: $scope.ale.name, pcs: $scope.pcs, price: $scope.pcs * $scope.ale.price});
       }
       console.log($scope.orders);
     };
@@ -118,8 +118,11 @@ angular.module('aleApp.controllers', [])
 
   .controller('YouIndexCtrl', ['$scope', 'OrderService', 'UserService', 'GravatarProvider', function($scope, OrderService, UserService, GravatarProvider) {
     $scope.buttonText = "Fill in all fields";
+    $scope.changeButtonText = "Change";
     $scope.regUser = UserService.getUser();
     $scope.orders = OrderService.getOrders();
+    $scope.oldHtml = "";
+    $scope.newPcs = 0;
     $scope.submitForm = function() {
       UserService.setUser($scope.form);
       $scope.form = {};
@@ -136,5 +139,20 @@ angular.module('aleApp.controllers', [])
     };
     $scope.cancelOrder = function(order) {
       OrderService.deleteOrder(order);
-    }
+    };
+    $scope.changeOrder = function(index) {
+      var className = ".order-" + index;
+      $(className).closest('.order-list').removeClass('changing');
+      if ($(className).closest('.order-list').hasClass('changing')) {
+        console.log("hello!");
+//        OrderService.changeOrder($scope.newPcs, index.name);
+//        console.log(OrderService.getOrders());
+      } else {
+        var newHtml = '<input ng-class="order-' + index + '" ng-model="newPcs" type="number" placeholder="' + index.pcs + '">';
+//        $(className).closest('.order-list').find('.button-change').html('Confirm');
+        $scope.changeButtonText = "Confirm";
+        $(className).closest('.order-list').addClass('changing');
+        $scope.oldHtml = $(className).replaceWith(newHtml);
+      }
+    };
   }]);

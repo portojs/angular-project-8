@@ -39,19 +39,28 @@ angular.module('aleApp.services', [
       getOrders: function() {
         return orders;
       },
-      setOrder: function(name, total, price) {
+      setOrder: function(name, pcs, price) {
         if (orders.length > 0) {
           for (var i = 0, len = orders.length; i < len; i++) {
             if (orders[i].name === name) {
-              orders[i].total += total;
-              orders[i].price += total * price;
+              orders[i].pcs += pcs;
+              orders[i].total += pcs * price;
+              orders[i].price = price;
               return;
             }
           }
-          orders.push({'name':name, 'total':total, 'price': total * price});
+          orders.push({'name':name, 'pcs':pcs, 'total': pcs * price});
         } else {
-          orders.push({'name':name, 'total':total, 'price': total * price});
+          orders.push({'name':name, 'pcs':pcs, 'total': pcs * price});
         }
+      },
+      changeOrder: function (pcs, name) {
+        orders.map(function(element, index, array) {
+          if (element.name === name) {
+            element.pcs = pcs;
+            element.total = pcs * element.price;
+          }
+        });
       },
       deleteOrder: function (order) {
         orders.splice(orders.indexOf(order), 1);
