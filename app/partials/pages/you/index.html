@@ -17,11 +17,18 @@
       <li>Email: {{ regUser.email }}</li>
       <li>Current orders:
         <ul>
-          <li class="order-list" ng-repeat="order in orders">
-            <b>Name: </b><span>{{ order.name }}</span><br/>
-            <b>Pcs: </b><span class="order-{{$index}}">{{ order.pcs }}</span><br/>
-            <b>Price: </b><span>{{ order.price }}</span><br/>
-            <button ng-click="changeOrder($index)" class="button-change" type="button">{{ changeButtonText }}</button>
+          <li class="order-list order-{{order.name}}" ng-repeat="order in orders">
+            <div class="show-details">
+              <div><b>Name: </b><span>{{ order.name }}</span></div>
+              <div><b>Pcs: </b><span>{{ order.pcs }}</span></div>
+              <div><b>Price: </b><span>{{ order.price * order.pcs }}</span></div>
+            </div>
+            <div class="edit-details">
+              <div><b>Name: </b><span>{{ order.name }}</span></div>
+              <div><b>Pcs: </b><input type="number" ng-model="order.pcs"></div>
+              <div><b>Price: </b><span>{{ order.price * order.pcs }}</span></div>
+            </div>
+            <button ng-click="changeOrder($index, order)" class="button-change" type="button">{{ changeButtonText }}</button>
             <button ng-click="cancelOrder(order)" class="button-cancel" type="button">Cancel</button>
           </li>
         </ul>

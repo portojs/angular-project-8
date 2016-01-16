@@ -49,22 +49,23 @@ angular.module('aleApp.services', [
               return;
             }
           }
-          orders.push({'name':name, 'pcs':pcs, 'total': pcs * price});
+          orders.push({'name':name, 'pcs':pcs, 'total': pcs * price, 'price': price});
         } else {
-          orders.push({'name':name, 'pcs':pcs, 'total': pcs * price});
+          orders.push({'name':name, 'pcs':pcs, 'total': pcs * price, 'price': price});
         }
       },
       changeOrder: function (pcs, name) {
         orders.map(function(element, index, array) {
+          console.log(element.name === name);
           if (element.name === name) {
             element.pcs = pcs;
             element.total = pcs * element.price;
+            console.log(element.name + " " + element.pcs + " " + element.total);
           }
         });
       },
       deleteOrder: function (order) {
         orders.splice(orders.indexOf(order), 1);
-        console.log(orders.indexOf(order));
       }
     };
   })
