@@ -36,7 +36,7 @@ angular.module('aleApp.controllers', [])
     };
     $scope.orderAle = function(item) {
       OrderService.setOrder(item.name, item.pcs, item.price);
-      console.log(item.price);
+//      console.log(item.price);
       item.pcs = 0;
     };
   }])
@@ -142,17 +142,18 @@ angular.module('aleApp.controllers', [])
       OrderService.deleteOrder(order);
     };
     $scope.changeOrder = function(index, order) {
-      var className = ".order-" + index;
-      var newPcs = 0;
-      if ($('.order-list').hasClass('changing')) {
-        newPcs = $(className).find('input').val();
-        $(className).find('input').replaceWith($scope.oldHtml);
-        $(className).closest('.order-list').removeClass('changing');
-        $scope.changeButtonText = "Change";
-        OrderService.changeOrder(newPcs, order.name);
-      } else {
-        $scope.changeButtonText = "Confirm";
-        $(className).closest('.order-list').addClass('changing');
-      }
+      //var className = ".order-" + index;
+      OrderService.changeOrder(order.pcs, order.name);
+      //var newPcs = 0;
+      //if ($('.order-list').hasClass('changing')) {
+      //  newPcs = $(className).find('input').val();
+      //  $(className).find('input').replaceWith($scope.oldHtml);
+      //  $(className).closest('.order-list').removeClass('changing');
+      //  $scope.changeButtonText = "Change";
+      //  OrderService.changeOrder(newPcs, order.name);
+      //} else {
+      //  $scope.changeButtonText = "Confirm";
+      //  $(className).closest('.order-list').addClass('changing');
+      //}
     };
   }]);
