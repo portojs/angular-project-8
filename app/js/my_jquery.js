@@ -7,7 +7,7 @@
 $(document).ready(function() {
   // 1. bind click event to the PCS field
   console.log('jquery works!');
-  $('.order-list').on('click', '.pcs-field', function() {
+  $('.user-login').on('click', 'input[type:email]', function() {
     console.log('jquery click');
     // 1.1. change details pane to edit pane on click event
     var thisOrder = $(this).closest('.order-list');

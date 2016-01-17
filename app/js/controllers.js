@@ -141,9 +141,8 @@ angular.module('aleApp.controllers', [])
     $scope.cancelOrder = function(order) {
       OrderService.deleteOrder(order);
     };
-    $scope.changeOrder = function(index, order) {
-      var className = ".order-" + order.name;
-      var thisOrder = $(className);
+    $scope.changeOrder = function(order) {
+      var thisOrder = $(".order-" + order.name);
       if (thisOrder.hasClass('changing')) {
         OrderService.changeOrder(order.pcs, order.name);
         thisOrder.removeClass('changing');
@@ -157,4 +156,19 @@ angular.module('aleApp.controllers', [])
         thisOrder.find('.edit-details').css({'display' : 'block'});
       }
     };
+    $scope.writeFocus = function() {
+      console.log('Focus-pocus!');
+    };
+    $scope.writeBlur = function() {
+      console.log('Blur-blurring!');
+    };
+    $scope.closeEditMode = function(order) {
+      console.log('Blur-blurring!');
+      var thisOrder = $(".order-" + order.name);
+      OrderService.changeOrder(order.pcs, order.name);
+      thisOrder.removeClass('changing');
+      thisOrder.find('.button-change').html('Change');
+      thisOrder.find('.edit-details').css({'display' : 'none'});
+      thisOrder.find('.show-details').css({'display' : 'block'});
+    }
   }]);
