@@ -28,7 +28,7 @@
               <div><b>Pcs: </b><input type="number" ng-model="order.pcs"></div>
               <div><b>Price: </b><span>{{ order.price * order.pcs }}</span></div>
             </div>
-            <button ng-click="changeOrder($index, order)" class="button-change" type="button">{{ changeButtonText }}</button>
+            <button ng-click="changeOrder($index, order)" class="button-change" type="button">Change</button>
             <button ng-click="cancelOrder(order)" class="button-cancel" type="button">Cancel</button>
           </li>
         </ul>

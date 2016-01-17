@@ -142,18 +142,20 @@ angular.module('aleApp.controllers', [])
       OrderService.deleteOrder(order);
     };
     $scope.changeOrder = function(index, order) {
-      //var className = ".order-" + index;
-      OrderService.changeOrder(order.pcs, order.name);
-      //var newPcs = 0;
-      //if ($('.order-list').hasClass('changing')) {
-      //  newPcs = $(className).find('input').val();
-      //  $(className).find('input').replaceWith($scope.oldHtml);
-      //  $(className).closest('.order-list').removeClass('changing');
-      //  $scope.changeButtonText = "Change";
-      //  OrderService.changeOrder(newPcs, order.name);
-      //} else {
-      //  $scope.changeButtonText = "Confirm";
-      //  $(className).closest('.order-list').addClass('changing');
-      //}
+      var className = ".order-" + order.name;
+      var thisOrder = $(className);
+      if (thisOrder.hasClass('changing')) {
+        OrderService.changeOrder(order.pcs, order.name);
+        thisOrder.removeClass('changing');
+        thisOrder.find('.button-change').html('Change');
+        thisOrder.find('.edit-details').css({'display' : 'none'});
+        thisOrder.find('.show-details').css({'display' : 'block'});
+      } else {
+        console.log('Change clicked');
+        thisOrder.addClass('changing');
+        thisOrder.find('.button-change').html('Confirm');
+        thisOrder.find('.show-details').css({'display' : 'none'});
+        thisOrder.find('.edit-details').css({'display' : 'block'});
+      }
     };
   }]);
