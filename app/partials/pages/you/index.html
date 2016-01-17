@@ -25,7 +25,7 @@
             </div>
             <div class="edit-details">
               <div><b>Name: </b><span>{{ order.name }}</span></div>
-              <div><b>Pcs: </b><input ng-model="order.pcs" ng-focus="writeFocus()" ng-blur="closeEditMode(order)" type="number" min="1"></div>
+              <div><b>Pcs: </b><input ng-model="order.pcs" ng-blur="closeEditMode(order)" type="number" min="1"></div>
               <div><b>Price: </b><span>{{ order.price * order.pcs }}</span></div>
             </div>
             <button ng-click="changeOrder(order)" class="button-change" type="button">Change</button>

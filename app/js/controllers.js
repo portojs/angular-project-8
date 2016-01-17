@@ -156,12 +156,6 @@ angular.module('aleApp.controllers', [])
         thisOrder.find('.edit-details').css({'display' : 'block'});
       }
     };
-    $scope.writeFocus = function() {
-      console.log('Focus-pocus!');
-    };
-    $scope.writeBlur = function() {
-      console.log('Blur-blurring!');
-    };
     $scope.closeEditMode = function(order) {
       console.log('Blur-blurring!');
       var thisOrder = $(".order-" + order.name);

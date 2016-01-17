@@ -6,9 +6,6 @@
 angular.module('aleApp.services', [
   'ngResource'
 ])
-  //.config('$resourceProvider', function($resourceProvider) {
-  //  $resourceProvider.default.stripTrailingSlashes = false;
-  //})
   .service('CompanyService',['$resource', function($resource) {
     return $resource('json/company.json', {}, {});
   }])
@@ -56,11 +53,9 @@ angular.module('aleApp.services', [
       },
       changeOrder: function (pcs, name) {
         orders.map(function(element, index, array) {
-          console.log(element.name === name);
           if (element.name === name) {
             element.pcs = pcs;
             element.total = pcs * element.price;
-            console.log(element.name + " " + element.pcs + " " + element.total);
           }
         });
       },
