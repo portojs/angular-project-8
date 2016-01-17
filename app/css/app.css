@@ -601,6 +601,10 @@ PAGE: YOU
   display: none;
 }
 
+#page-you .order-list input {
+  display: inline-block;
+  width: 200px;
+}
 
 
 /***************************************
