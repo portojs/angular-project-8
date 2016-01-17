@@ -20,7 +20,7 @@
           <li class="order-list order-{{order.name}}" ng-repeat="order in orders">
             <div class="show-details">
               <div><b>Name: </b><span>{{ order.name }}</span></div>
-              <div><b>Pcs: </b><span>{{ order.pcs }}</span></div>
+              <div class="pcs-field"><b>Pcs: </b><span>{{ order.pcs }}</span></div>
               <div><b>Price: </b><span>{{ order.price * order.pcs }}</span></div>
             </div>
             <div class="edit-details">

@@ -151,7 +151,6 @@ angular.module('aleApp.controllers', [])
         thisOrder.find('.edit-details').css({'display' : 'none'});
         thisOrder.find('.show-details').css({'display' : 'block'});
       } else {
-        console.log('Change clicked');
         thisOrder.addClass('changing');
         thisOrder.find('.button-change').html('Confirm');
         thisOrder.find('.show-details').css({'display' : 'none'});
